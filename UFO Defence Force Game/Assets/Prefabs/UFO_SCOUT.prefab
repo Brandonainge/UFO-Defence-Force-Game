@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9095038521927735742}
   - component: {fileID: 1948066082916143858}
   - component: {fileID: 7677909992556983391}
-  - component: {fileID: -5526239225733283293}
+  - component: {fileID: -7558395951255809245}
   m_Layer: 0
   m_Name: UFO_SCOUT
   m_TagString: Untagged
@@ -144,7 +144,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-5526239225733283293
+--- !u!114 &-7558395951255809245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1377623805031945210}
   - component: {fileID: -1208803833861096418}
   - component: {fileID: 4058256353898348389}
-  - component: {fileID: -8199829259052692795}
+  - component: {fileID: 6630102768693014888}
   m_Layer: 0
   m_Name: UFO_MotherShip
   m_TagString: Untagged
@@ -144,7 +144,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-8199829259052692795
+--- !u!114 &6630102768693014888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

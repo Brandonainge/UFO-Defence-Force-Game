@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f1549ce6895415449eccc0195f327bc, type: 3}
   m_Name: Collectable
   m_EditorClassIdentifier: 
-  value: 20
+  value: 105
