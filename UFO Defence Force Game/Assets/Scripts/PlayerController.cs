@@ -5,12 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    public float speed;
+    public float speed = 25;
 
-    public float xRange;
+    public float xRange = 30;
 
     public Transform blaster;
     public GameObject lazerBolt;
+
+    public GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>(); // Reference GameManager script on GameManager object
+    }
 
 
     // Update is called once per frame
@@ -33,16 +40,11 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
         // if space bar is presssed it will fire lazerbolt
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && gameManager.isGameOver == false)
         {
             // creates laserbolt at the blaster transform position maintaining the objects rotation.
             Instantiate(lazerBolt, blaster.transform.position, lazerBolt.transform.rotation);
         }
+    }
 
-    }
-    // Delet any object with a trigger that hits the player
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(other.gameObject);
-    }
 }

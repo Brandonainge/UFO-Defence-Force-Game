@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-  void OnTriggerEnter(Collider other)
-  {
-	  Destroy(gameObject); // destroy this game object
-	 // Destroy(other.gameObject); // destroys the other game object it hits
-  }
+	public ScoreManager scoreManager; // Store reference to score manager
+
+	public int scoreToGive;
+
+	void start()
+	{
+		scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>(); // Find ScoreManager gameobject and reference ScoreManager script component
+	}
+    void OnTriggerEnter(Collider other)
+    {
+	    scoreManager.IncreaseScore(scoreToGive); // Increase the score
+	    Destroy(gameObject); // destroy this game object
+	    Destroy(other.gameObject); // destroys the other game object it hits
+    }
 }
