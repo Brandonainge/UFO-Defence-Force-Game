@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
    {
 	   if(isGameOver)
 	   {
+		   SoundManager.PlaySound("Sad Trombone Wah Wah Wah Fail Sound Effect");
 		   EndGame();
 	   }
 	   else

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private AudioSource playerAudio;
     public float horizontalInput;
     public float speed = 25;
 
@@ -13,9 +14,11 @@ public class PlayerController : MonoBehaviour
     public GameObject lazerBolt;
 
     public GameManager gameManager;
+    public AudioClip fireSound;
 
     void Start()
     {
+        playerAudio = GetComponent<AudioSource>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>(); // Reference GameManager script on GameManager object
     }
 
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour
         // if space bar is presssed it will fire lazerbolt
         if(Input.GetKeyDown(KeyCode.Space) && gameManager.isGameOver == false)
         {
+            playerAudio.PlayOneShot(fireSound, 1.0f);
             // creates laserbolt at the blaster transform position maintaining the objects rotation.
             Instantiate(lazerBolt, blaster.transform.position, lazerBolt.transform.rotation);
         }
